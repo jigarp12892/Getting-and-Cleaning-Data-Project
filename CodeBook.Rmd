@@ -3,11 +3,7 @@ title: "Codebook"
 author: "Jigar Patel"
 date: "April 7, 2018"
 output: html_document
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## Code Book for Getting and Cleaning Data Project
 
