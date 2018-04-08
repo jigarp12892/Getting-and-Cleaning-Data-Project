@@ -1,0 +1,21 @@
+---
+title: "Codebook"
+author: "Jigar Patel"
+date: "April 7, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Code Book for Getting and Cleaning Data Project
+
+*Summary of final data set with all variables and their ranges
+
+```{r}
+View(summary)
+```
+
+
+

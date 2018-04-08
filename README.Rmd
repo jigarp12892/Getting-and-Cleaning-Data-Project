@@ -1,0 +1,50 @@
+###This R script can be read along with the comments in the R script to understand better :
+
+
+	*'Step 1 : setting data folder as working directory'
+ 
+The UCI folder which contains all files is set as working directory using the setwd function 
+   
+    vx
+	*'Step 2 : reading dataset,subject IDs and activity IDs for training and test data' 
+   
+6 files are being read here. 3 for test related data, 3 for training related data.
+
+In each group, 1 file has IDs of who performed the measurements(Subject), 1 files has IDs of which of the 6 activities is being performed(activity ID), and 1 file has all of the 561 different measurements.
+ 
+
+
+	*'Step 3 : Binding columns of test columns'
+
+This step binds 3 files of test group together. Now we know who did the measurement by doing which activity and what each of 561 measurements were
+  
+  
+	*'Step 4 : Binding columns of training columns'
+  
+This step binds 3 files of training group together. Now we know who did the measurement by doing which activity and what each of 561 measurements were  
+
+	*'Step 5 : Binding rows to merge all 563 cols of test and training'
+
+Binding test and training group together into one single dataset. All six files we read are now combined
+  
+	*'Step 6: add appropriate variable names'
+
+Initially the table has V1,V2,V3...V563 as variable names. colnames along with a file in the data folder, called "features.txt" is used to add variable names.
+ 
+  
+	*'Step 7 : Finding columns that contain "mean" or "std"'
+
+Using grep function and regular expressions from week 4, we can search our colnames to find variables which are either a "mean" or a "std". Note that 3 variables contain the word "mean" twice, and grep only counts that as 3 hits instead of 6.
+  
+	*'Step 8: Creating DataSet with Subject ID, Activity ID and measurements that contain MEAN or STD'
+
+Now we know the indices of the columns we need to filter out. We assign the required indices and create the desired "ReducedData" 
+  
+	*'Step 9 Giving descriptive activity label names'
+
+First we read the "activity labels" file from the data folder. Then we use lookup function from qdap package. It reads the lookup table we just read, and replaces the acitivity ID numbers in "ReducedData" with actual acitivity names.
+
+
+	*'Step 10 : Creating an independent tidy dataset'
+
+
