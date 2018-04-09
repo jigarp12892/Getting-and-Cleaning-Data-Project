@@ -8,11 +8,327 @@ output: html_document
 
 ## Code Book for Getting and Cleaning Data Project
 
-*Summary of final data set with all variables and their ranges
 
-```{r}
-View(summary)
-```
 
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+tBodyAcc-XYZ
+tGravityAcc-XYZ
+tBodyAccJerk-XYZ
+tBodyGyro-XYZ
+tBodyGyroJerk-XYZ
+tBodyAccMag
+tGravityAccMag
+tBodyAccJerkMag
+tBodyGyroMag
+tBodyGyroJerkMag
+fBodyAcc-XYZ
+fBodyAccJerk-XYZ
+fBodyGyro-XYZ
+fBodyAccMag
+fBodyAccJerkMag
+fBodyGyroMag
+fBodyGyroJerkMag
+
+#The set of variables that were estimated from these signals are: 
+
+*mean(): Mean value
+*std(): Standard deviation
+*mad(): Median absolute deviation 
+*max(): Largest value in array
+*min(): Smallest value in array
+*sma(): Signal magnitude area
+*energy(): Energy measure. Sum of the squares divided by the number of values. 
+*iqr(): Interquartile range 
+*entropy(): Signal entropy
+*arCoeff(): Autorregresion coefficients with Burg order equal to 4
+*correlation(): correlation coefficient between two signals
+*maxInds(): index of the frequency component with largest magnitude
+*meanFreq(): Weighted average of the frequency components to obtain a mean frequency
+*skewness(): skewness of the frequency domain signal 
+*kurtosis(): kurtosis of the frequency domain signal 
+*bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
+*angle(): Angle between to vectors.
+
+###Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
+
+*gravityMean
+*tBodyAccMean
+*tBodyAccJerkMean
+*tBodyGyroMean
+*tBodyGyroJerkMean
+
+##All Variables in the set
+
+[[1]]
+[1] "Subject ID"
+
+[[2]]
+[1] "Activity ID"
+
+[[3]]
+[1] "tBodyAcc-mean()-X"
+
+[[4]]
+[1] "tBodyAcc-mean()-Y"
+
+[[5]]
+[1] "tBodyAcc-mean()-Z"
+
+[[6]]
+[1] "tBodyAcc-std()-X"
+
+[[7]]
+[1] "tBodyAcc-std()-Y"
+
+[[8]]
+[1] "tBodyAcc-std()-Z"
+
+[[9]]
+[1] "tGravityAcc-mean()-X"
+
+[[10]]
+[1] "tGravityAcc-mean()-Y"
+
+[[11]]
+[1] "tGravityAcc-mean()-Z"
+
+[[12]]
+[1] "tGravityAcc-std()-X"
+
+[[13]]
+[1] "tGravityAcc-std()-Y"
+
+[[14]]
+[1] "tGravityAcc-std()-Z"
+
+[[15]]
+[1] "tBodyAccJerk-mean()-X"
+
+[[16]]
+[1] "tBodyAccJerk-mean()-Y"
+
+[[17]]
+[1] "tBodyAccJerk-mean()-Z"
+
+[[18]]
+[1] "tBodyAccJerk-std()-X"
+
+[[19]]
+[1] "tBodyAccJerk-std()-Y"
+
+[[20]]
+[1] "tBodyAccJerk-std()-Z"
+
+[[21]]
+[1] "tBodyGyro-mean()-X"
+
+[[22]]
+[1] "tBodyGyro-mean()-Y"
+
+[[23]]
+[1] "tBodyGyro-mean()-Z"
+
+[[24]]
+[1] "tBodyGyro-std()-X"
+
+[[25]]
+[1] "tBodyGyro-std()-Y"
+
+[[26]]
+[1] "tBodyGyro-std()-Z"
+
+[[27]]
+[1] "tBodyGyroJerk-mean()-X"
+
+[[28]]
+[1] "tBodyGyroJerk-mean()-Y"
+
+[[29]]
+[1] "tBodyGyroJerk-mean()-Z"
+
+[[30]]
+[1] "tBodyGyroJerk-std()-X"
+
+[[31]]
+[1] "tBodyGyroJerk-std()-Y"
+
+[[32]]
+[1] "tBodyGyroJerk-std()-Z"
+
+[[33]]
+[1] "tBodyAccMag-mean()"
+
+[[34]]
+[1] "tBodyAccMag-std()"
+
+[[35]]
+[1] "tGravityAccMag-mean()"
+
+[[36]]
+[1] "tGravityAccMag-std()"
+
+[[37]]
+[1] "tBodyAccJerkMag-mean()"
+
+[[38]]
+[1] "tBodyAccJerkMag-std()"
+
+[[39]]
+[1] "tBodyGyroMag-mean()"
+
+[[40]]
+[1] "tBodyGyroMag-std()"
+
+[[41]]
+[1] "tBodyGyroJerkMag-mean()"
+
+[[42]]
+[1] "tBodyGyroJerkMag-std()"
+
+[[43]]
+[1] "fBodyAcc-mean()-X"
+
+[[44]]
+[1] "fBodyAcc-mean()-Y"
+
+[[45]]
+[1] "fBodyAcc-mean()-Z"
+
+[[46]]
+[1] "fBodyAcc-std()-X"
+
+[[47]]
+[1] "fBodyAcc-std()-Y"
+
+[[48]]
+[1] "fBodyAcc-std()-Z"
+
+[[49]]
+[1] "fBodyAcc-meanFreq()-X"
+
+[[50]]
+[1] "fBodyAcc-meanFreq()-Y"
+
+[[51]]
+[1] "fBodyAcc-meanFreq()-Z"
+
+[[52]]
+[1] "fBodyAccJerk-mean()-X"
+
+[[53]]
+[1] "fBodyAccJerk-mean()-Y"
+
+[[54]]
+[1] "fBodyAccJerk-mean()-Z"
+
+[[55]]
+[1] "fBodyAccJerk-std()-X"
+
+[[56]]
+[1] "fBodyAccJerk-std()-Y"
+
+[[57]]
+[1] "fBodyAccJerk-std()-Z"
+
+[[58]]
+[1] "fBodyAccJerk-meanFreq()-X"
+
+[[59]]
+[1] "fBodyAccJerk-meanFreq()-Y"
+
+[[60]]
+[1] "fBodyAccJerk-meanFreq()-Z"
+
+[[61]]
+[1] "fBodyGyro-mean()-X"
+
+[[62]]
+[1] "fBodyGyro-mean()-Y"
+
+[[63]]
+[1] "fBodyGyro-mean()-Z"
+
+[[64]]
+[1] "fBodyGyro-std()-X"
+
+[[65]]
+[1] "fBodyGyro-std()-Y"
+
+[[66]]
+[1] "fBodyGyro-std()-Z"
+
+[[67]]
+[1] "fBodyGyro-meanFreq()-X"
+
+[[68]]
+[1] "fBodyGyro-meanFreq()-Y"
+
+[[69]]
+[1] "fBodyGyro-meanFreq()-Z"
+
+[[70]]
+[1] "fBodyAccMag-mean()"
+
+[[71]]
+[1] "fBodyAccMag-std()"
+
+[[72]]
+[1] "fBodyAccMag-meanFreq()"
+
+[[73]]
+[1] "fBodyBodyAccJerkMag-mean()"
+
+[[74]]
+[1] "fBodyBodyAccJerkMag-std()"
+
+[[75]]
+[1] "fBodyBodyAccJerkMag-meanFreq()"
+
+[[76]]
+[1] "fBodyBodyGyroMag-mean()"
+
+[[77]]
+[1] "fBodyBodyGyroMag-std()"
+
+[[78]]
+[1] "fBodyBodyGyroMag-meanFreq()"
+
+[[79]]
+[1] "fBodyBodyGyroJerkMag-mean()"
+
+[[80]]
+[1] "fBodyBodyGyroJerkMag-std()"
+
+[[81]]
+[1] "fBodyBodyGyroJerkMag-meanFreq()"
+
+[[82]]
+[1] "angle(tBodyAccMean,gravity)"
+
+[[83]]
+[1] "angle(tBodyAccJerkMean),gravityMean)"
+
+[[84]]
+[1] "angle(tBodyGyroMean,gravityMean)"
+
+[[85]]
+[1] "angle(tBodyGyroJerkMean,gravityMean)"
+
+[[86]]
+[1] "angle(X,gravityMean)"
+
+[[87]]
+[1] "angle(Y,gravityMean)"
+
+[[88]]
+[1] "angle(Z,gravityMean)"
 
 

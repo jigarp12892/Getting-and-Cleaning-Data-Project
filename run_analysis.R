@@ -53,8 +53,10 @@ library("qdap")
 ReducedData$`Activity ID`<-lookup(ReducedData$`Activity ID`,activityNames)
 
 'Step 10 : Creating an independent tidy dataset'
-
-tidyData <-ReducedData %>% group_by(`Subject ID`,`Activity ID`) %>% summarise_all(funs(mean))
+library(magrittr)
+library(dplyr)
+tidyData <- ReducedData %>% group_by(`Subject ID`,`Activity ID`) %>% summarise_all(funs(mean))
+tidyData
 
 write.table(tidyData,file = "./tidyData")
 }
